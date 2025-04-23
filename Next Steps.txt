@@ -3,6 +3,6 @@
 - Reducir el tamaño de las fotos para que el sitio web cargue mas rapido
 
 Reunion Oscar:
-- Agregar atracciones y eliminar correo a barra de navegacion
+- Agregar atracciones y eliminar correo a barra de navegacion (no escencial)
 - Agrandar la foto al cliquearla (no escencial)
-- En atracciones y entornos agregar saltos del gato, iglesia de piedra y arcos de calan
+- Que al traducir la pagina, no cambie el correo
