@@ -33,9 +33,29 @@ header {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #fff;
+  width: 100px;
+  text-align: center;
+}
+
+.logo img {
+  width: 40px; /* Tamaño de la imagen */
+  height: 40px;
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.nav-title {
   font-size: 1.6em;
   font-weight: bold;
   color: #fff;
+  width: 400px;
+  text-align: left;
+  margin: 0.75em;
 }
 
 .logo a {
@@ -100,10 +120,11 @@ nav a:hover {
 }
 
 .hero .overlay {
-  position: relative;
+  position: absolute;
+  bottom: 25px;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 3em;
+  padding: 1em;
   border-radius: 1em;
   backdrop-filter: blur(6px);
   animation: fadeIn 1.5s ease-in-out;
@@ -139,13 +160,8 @@ nav a:hover {
 }
 
 .hero h2 {
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: #fff;
-}
-
-.hero p {
-  font-size: 1.2em;
-  color: #ddd;
 }
 
 
@@ -424,6 +440,67 @@ footer {
   height: 30px;
 }
 
+/* Call Icon*/
+
+/* Contenedor de los botones de llamada */
+.call-buttons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 15px; /* Espaciado entre los botones */
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Botón de llamada principal */
+.primary-call {
+  width: 60px;
+  height: 60px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.primary-call:hover {
+  transform: scale(1.1);
+  background-color: #1e88e5;
+}
+
+/* Botón de llamada secundaria (más pequeño) */
+.secondary-call {
+  width: 45px;
+  height: 45px;
+  background-color: #1e88e5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8; /* Ligera transparencia para enfatizar el primero */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  margin-left: -0.25em;
+}
+
+.secondary-call:hover {
+  transform: scale(1.1);
+  background-color: #1565c0;
+}
+
+/* Ajuste del icono */
+.call-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.call-icon-2 {
+  width: 25px;
+  height: 25px;
+}
 
 
 
@@ -454,6 +531,8 @@ footer {
   padding: 2em;
   margin: auto;
   text-align: center;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }
 
 /* Título */
