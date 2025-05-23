@@ -44,7 +44,7 @@ header {
 }
 
 .logo img {
-  width: 40px; /* Tamaño de la imagen */
+  width: 60px; /* Tamaño de la imagen */
   height: 40px;
   margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
