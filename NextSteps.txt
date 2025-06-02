@@ -1,8 +1,5 @@
 - Para mobile responsive, ajustar el tamanio de las fotos para las paginas de cada cabania
-- Hacer que cuando el cliente llene el formulario, se genera un email con la informacion
 - Reducir el tamaño de las fotos para que el sitio web cargue mas rapido
 
 Reunion Oscar:
-- Agregar atracciones y eliminar correo a barra de navegacion (no escencial)
-- Agrandar la foto al cliquearla (no escencial)
 - Que al traducir la pagina, no cambie el correo
