@@ -25,12 +25,12 @@
 <div class="call-buttons">
   <!-- First Call Icon -->
   <a href="tel:+56993205308" class="call-float primary-call" title="Llámanos">
-    <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Llamar" class="call-icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Llamar" class="call-icon-2">
   </a>
 
   <!-- Second Call Icon -->
   <a href="tel:+56974892591" class="call-float secondary-call" title="Llámanos al segundo número">
-    <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Llamar" class="call-icon-2">
+    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Llamar" class="call-icon-2">
   </a>
 </div>
 
@@ -59,9 +59,9 @@
 
   <section id="home" class="hero">
     <div class="hero-slide" style="background-image: url('images/edificio principal.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('images/terraza exterior area comun.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('images/hot-tub.jpg');"></div>
     <div class="hero-slide" style="background-image: url('images/cabin 6 - terrace.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/terraza exterior area comun.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('images/cabin 4 - 1 bed.jpg');"></div>
     <div class="overlay">
       <h2>Cabañas Frente a la Playa</h2>
     </div>
@@ -129,13 +129,14 @@
 
   <section id="services" class="section light">
     <ul class="features">
-      <li>Estacionamiento</li>
-      <li>Áras verdes</li>
-      <li>Quinchos</li>
-      <li>Acceso directo a la playa</li>
-      <li>Tinaja $25.000p/h</li>
+      <li data-images="images/parking1.jpg,images/parking2.jpg">Estacionamiento</li>
+      <li data-images="images/garden2.jpg,images/garden3.jpg,images/garden1.jpg">Áreas verdes</li>
+      <li data-images="images/quincho1.jpg,images/quincho2.jpg">Quinchos</li>
+      <li data-images="images/surrounding1.jpg,images/surrounding2.jpg">Entorno</li>
+      <li data-images="images/hot-tub.jpg,images/hot-tub2.jpg">Tinaja $25.000p/h</li>
     </ul>
   </section>
+  
 
   <section id="surroundings" class="section">
     <h2>Entorno y Atracciones Cercanas</h2>
@@ -192,7 +193,7 @@
   </section>
 
   <section id="map">
-     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3846.5202403361236!2d-72.6241199768523!3d-35.836126251543966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96663204d40451c5%3A0xd8a5b1756cf46d78!2sCaba%C3%B1as%20en%20Pelluhue%20%22Vuelo%20de%20Gaviotas%22!5e0!3m2!1sen!2sau!4v1744963027323!5m2!1sen!2sau" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3846.5202403361236!2d-72.6241199768523!3d-35.836126251543966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96663204d40451c5%3A0xd8a5b1756cf46d78!2sCaba%C3%B1as%20en%20Pelluhue%20%22Vuelo%20de%20Gaviotas%22!5e0!3m2!1sen!2sau!4v1744963027323!5m2!1sen!2sau" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
 
   <footer>
@@ -200,5 +201,17 @@
   </footer>
 
   <script src="scripts.js"></script>
+
+  <div id="lightbox" class="lightbox hidden">
+    <div class="lightbox-content">
+      <button id="close-lightbox" class="close-btn">×</button>
+      <div class="carousel">
+        <button class="nav prev">‹</button>
+        <img id="carousel-image" src="" alt="Foto del servicio">
+        <button class="nav next">›</button>
+      </div>
+    </div>
+  </div>
+  
 </body>
 </html>

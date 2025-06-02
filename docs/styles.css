@@ -298,8 +298,17 @@ nav a:hover {
   padding: 1em 1.5em;
   border-radius: 0.8em;
   font-size: 1.1em;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  cursor: pointer; /* Indica que es clickeable */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Sombra base suave */
 }
+
+.features li:hover {
+  background-color: #016b8c; /* Cambia un poco el color para feedback */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35); /* Sombra más grande y difusa */
+  transform: translateY(-5px); /* Levitación hacia arriba */
+}
+
 
 
 /* Surroundings Section */
@@ -405,6 +414,22 @@ footer {
     display: block;
     text-align: center;
   }
+
+  /* Ajustes para features li */
+  .features li {
+    touch-action: manipulation; /* Mejor respuesta táctil */
+    margin-bottom: 0.75em;       /* Más espacio entre items */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Sombra más fuerte */
+    border-radius: 0.8em;      /* Para que la sombra luzca mejor */
+    transition: box-shadow 0.3s, transform 0.2s, background-color 0.3s;
+  }
+
+  .features li:active {
+    transform: translateY(2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) inset; /* Sombra más marcada al presionar */
+    background-color: #013f55;
+  }
+
 }
 
 /* Evitar que las cards dentro de surroundings se levanten */
@@ -448,7 +473,6 @@ footer {
   bottom: 20px;
   left: 20px;
   display: flex;
-  gap: 15px; /* Espaciado entre los botones */
   align-items: center;
   z-index: 1000;
 }
@@ -464,6 +488,7 @@ footer {
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
+  z-index: 2;
 }
 
 .primary-call:hover {
@@ -471,7 +496,7 @@ footer {
   background-color: #1e88e5;
 }
 
-/* Botón de llamada secundaria (más pequeño) */
+/* Botón de llamada secundaria (inicialmente oculto) */
 .secondary-call {
   width: 45px;
   height: 45px;
@@ -480,28 +505,96 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.8; /* Ligera transparencia para enfatizar el primero */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
-  margin-left: -0.25em;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.5);
+  transition: all 0.3s ease;
+  margin-left: 10px;
 }
 
-.secondary-call:hover {
-  transform: scale(1.1);
-  background-color: #1565c0;
+/* Clase activa que se agrega por JS cuando se expande */
+.call-buttons.expanded .secondary-call {
+  opacity: 0.8;
+  visibility: visible;
+  transform: scale(1);
 }
 
-/* Ajuste del icono */
+/* Iconos */
 .call-icon {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 }
 
 .call-icon-2 {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
 }
 
+/* Lightbox general */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Ocultar por defecto */
+.hidden {
+  display: none;
+}
+
+/* Contenedor de contenido */
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+  background: #fff;
+  padding: 1em;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Imagen central */
+#carousel-image {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Flechas */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  font-size: 2em;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2em;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 
 
@@ -611,3 +704,4 @@ footer {
 .gallery-container img:hover {
   transform: scale(1.05);
 }
+
