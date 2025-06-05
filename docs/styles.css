@@ -17,20 +17,13 @@ body, html {
 header {
   background-color: #014f68;
   color: white;
-  padding: 1em 0;
+  padding: 0.5em 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.container {
-  margin: auto;
-  padding: 0 1em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .logo {
   display: flex;
@@ -55,6 +48,14 @@ header {
   text-decoration: none;
 }
 
+.container {
+  margin: auto;
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .container a {
   display: flex;
   align-items: center;
@@ -74,14 +75,12 @@ header {
 
 nav ul {
   display: flex;
-  flex-direction: column;
-  gap: 0.5em;
+  flex-direction: row;
+  table-layout: fixed;  
+  gap: 3em;
   list-style: none;
-  background-color: #1e1e1e;
-  padding: 1em;
   margin: 0;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 nav li {
@@ -90,10 +89,6 @@ nav li {
   padding: 0.5em 0.75em;
   border-radius: 8px;
   transition: background-color 0.3s;
-}
-
-nav li:hover {
-  background-color: #2a2a2a;
 }
 
 nav a {
@@ -107,6 +102,9 @@ nav a {
   white-space: nowrap; /* Fuerza el texto en una sola línea */
 }
 
+nav a:hover {
+  color: #a8e0f0;
+}
 
 
 .menu-toggle {
@@ -116,6 +114,8 @@ nav a {
   font-size: 1.5em;
   border: none;
 }
+
+
 
 
 /* HERO SECTION - Carrusel */
@@ -409,10 +409,23 @@ footer {
     right: 0;
     width: 200px;
     display: none;
+    gap: 2.5px;
   }
 
   nav ul.show {
     display: flex;
+  }
+
+  nav li {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    min-width: max-content; /* que cada elemento sea al menos lo que necesite */
+  }
+
+  nav a {
+    padding: 0.5em 1em;
   }
 
   .menu-toggle {
