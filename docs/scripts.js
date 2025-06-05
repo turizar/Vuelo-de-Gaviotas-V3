@@ -101,5 +101,93 @@ const cabinData = [
   }
 ];
 
+// Call Icon
+document.addEventListener('DOMContentLoaded', () => {
+  const callButtons = document.querySelector('.call-buttons');
+  const primaryCall = document.querySelector('.primary-call');
+  let expanded = false;
+
+  // Ocultar secundario al inicio
+  callButtons.classList.remove('expanded');
+
+  primaryCall.addEventListener('click', (e) => {
+    if (!expanded) {
+      e.preventDefault();
+      callButtons.classList.add('expanded');
+      expanded = true;
+    }
+    // Si ya está expandido, se permite la llamada
+  });
+});
+
+
+// Despliegue Imagenes Servicios
+document.addEventListener("DOMContentLoaded", function () {
+  const serviceItems = document.querySelectorAll(".features li");
+  const lightbox = document.getElementById("lightbox");
+  const carouselImage = document.getElementById("carousel-image");
+  const closeBtn = document.getElementById("close-lightbox");
+  const prevBtn = document.querySelector(".nav.prev");
+  const nextBtn = document.querySelector(".nav.next");
+
+  let images = [];
+  let currentIndex = 0;
+
+  // Mostrar imagen actual del carrusel
+  function showImage() {
+    if (images.length > 0) {
+      carouselImage.src = images[currentIndex];
+    }
+  }
+
+  // Abrir lightbox al hacer clic en un ítem
+  serviceItems.forEach(item => {
+    item.addEventListener("click", () => {
+      const dataImages = item.getAttribute("data-images");
+      if (dataImages) {
+        images = dataImages.split(",");
+        currentIndex = 0;
+        showImage();
+        lightbox.classList.remove("hidden");
+      }
+    });
+  });
+
+  // Navegar a imagen anterior
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+  });
+
+  // Navegar a imagen siguiente
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+  });
+
+  // Cerrar lightbox con botón
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+  });
+
+  // Cerrar lightbox con tecla Escape
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.classList.contains("hidden")) return;
+
+    if (e.key === "Escape") {
+      lightbox.classList.add("hidden");
+    } else if (e.key === "ArrowRight") {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage();
+    } else if (e.key === "ArrowLeft") {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage();
+    }
+  });
+});
+
+
+
 // Aquí se podrían agregar funciones que manipulen el DOM para mostrar los datos de las cabañas dinámicamente
+
 
